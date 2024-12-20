@@ -1,0 +1,23 @@
+.page-layout {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+.header {
+    background-color: white;
+    box-shadow: var(--shadow-light);
+    padding: var(--spacing-m) 0;
+}
+
+.main-content {
+    padding: var(--spacing-l) 0;
+}
+
+.footer {
+    background-color: var(--clr-secondary);
+    color: white;
+    text-align: center;
+    padding: var(--spacing-m);
+}
+
