@@ -1,27 +1,6 @@
 :root {
-    --clr-primary: #007bff;
-    --clr-secondary: #6c757d;
-    --clr-background: #f4f4f4;
-    --clr-text: #333;
-    
-    --clr-dark-bg: #1a1a1a;
-    --clr-dark-text: #e0e0e0;
-    
-    --spacing-s: 0.5rem;
-    --spacing-m: 1rem;
-    --spacing-l: 2rem;
-    
-    --font-primary: 'Arial', sans-serif;
-    --font-secondary: 'Helvetica', sans-serif;
-    
-    --shadow-light: 0 2px 4px rgba(0,0,0,0.1);
-    --shadow-medium: 0 4px 6px rgba(0,0,0,0.15);
-    
-    --transition-fast: 0.2s ease;
-    --transition-medium: 0.3s ease;
-}
-
-.dark-theme {
-    --clr-background: var(--clr-dark-bg);
-    --clr-text: var(--clr-dark-text);
+    --main-bg-color: #f9f9f9;
+    --header-bg-color: #333;
+    --text-color: #000;
+    --canvas-border-color: #ccc;
 }

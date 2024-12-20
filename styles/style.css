@@ -1,18 +1,12 @@
-/* Basis */
-@import 'basis/base.css';
-@import 'basis/helpers.css';
-@import 'basis/layout.css';
+@import './setup/vars.css';
+@import './setup/typography.css';
+@import './setup/mq.css';
 
-/* Components */
-@import 'components/navigation.css';
-@import 'components/reset.css';
-@import 'components/form.css';
-@import 'components/map.css';
-@import 'components/home.css';
+@import './basis/base.css';
+@import './basis/helpers.css';
+@import './basis/layout.css';
 
-
-
-/* Setup */
-@import 'setup/vars.css';
-@import 'setup/typography.css';
-@import 'setup/mq.css';
+@import './components/navigation.css';
+@import './components/reset.css';
+@import './components/form.css';
+@import './components/editor.css';

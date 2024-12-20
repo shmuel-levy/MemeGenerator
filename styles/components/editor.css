@@ -1,0 +1,13 @@
+.meme-canvas {
+    border: 1px solid var(--canvas-border-color);
+    background-color: var(--main-bg-color);
+    display: block;
+    margin: 0 auto;
+}
+
+.image-container img {
+    width: 100px;
+    height: auto;
+    margin: 5px;
+    cursor: pointer;
+}
