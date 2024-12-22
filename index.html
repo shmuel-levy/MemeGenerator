@@ -1,26 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme Generator</title>
-    <link rel="stylesheet" href="styles/style.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Meme Generator</h1>
-    </header>
-    <main>
-      <section class="gallery">
-        <h2>Image Gallery</h2>
-        <div class="image-container"></div>
-      </section>
-      <section class="editor">
-        <h2>Meme Editor</h2>
-        <canvas class="meme-canvas" width="450" height="450"></canvas>
-      </section>
-    </main>
-    <script src="JS/controllers/meme-controller.js"></script>
-    <script src="JS/services/meme-service.js"></script>
-  </body>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body onload="onInit()">
+    <div class="main-container">
+        <header>
+            <nav class="main-nav">
+                <div class="logo">Meme Generator</div>
+                <ul class="nav-links">
+                    <li><button onclick="showSection('gallery')">Gallery</button></li>
+                    <li><button onclick="showSection('meme-editor')">Editor</button></li>
+                    <li><button onclick="showSection('saved-memes')">Saved</button></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="gallery">
+                <div class="search-container">
+    <input type="text" 
+           class="search-input" 
+           placeholder="Search memes by keywords..."
+           list="search-keywords">
+    <datalist id="search-keywords"></datalist>
+    
+    <div class="filter-tags">
+        <span class="tag" onclick="onKeywordClick('funny')">Funny</span>
+        <span class="tag" onclick="onKeywordClick('cute')">Cute</span>
+        <span class="tag" onclick="onKeywordClick('animals')">Animals</span>
+    </div>
+</div>
+                <div class="image-container grid-container">
+                </div>
+            </section>
+
+            <section class="meme-editor hidden">
+                <div class="editor-grid">
+                    <div class="canvas-container">
+                        <canvas class="meme-canvas" width="450" height="450"></canvas>
+                    </div>
+                    
+                </section>
+
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Meme Generator. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="js/services/storage-service.js"></script>
+    <script src="js/services/util-service.js"></script>
+    <script src="js/services/meme-service.js"></script>
+    <script src="js/controllers/gallery-controller.js"></script>
+    <script src="js/controllers/meme-controller.js"></script>
+
+</body>
 </html>
