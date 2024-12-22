@@ -1,13 +1,31 @@
-.meme-canvas {
-    border: 1px solid var(--canvas-border-color);
-    background-color: var(--main-bg-color);
-    display: block;
+.meme-editor {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.editor-container {
+    display: flex;
+    gap: 40px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.image-container img {
-    width: 100px;
+.canvas-container {
+    background-color: var(--secondary-bg);
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+}
+
+.canvas-container canvas {
+    max-width: 100%;
     height: auto;
-    margin: 5px;
-    cursor: pointer;
+    background-color: white;
+}
+
+ 
+.hidden {
+    display: none !important;
 }

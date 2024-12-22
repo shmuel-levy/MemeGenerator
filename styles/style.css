@@ -8,5 +8,7 @@
 
 @import './components/navigation.css';
 @import './components/reset.css';
-@import './components/form.css';
+@import './components/gallery.css';
 @import './components/editor.css';
+@import './components/saved-memes.css';
+

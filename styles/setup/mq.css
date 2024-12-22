@@ -1,0 +1,14 @@
+@media (max-width: 768px) {
+    .editor-container {
+        flex-direction: column;
+    }
+
+    .control-box {
+        width: 100%;
+    }
+
+    .image-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
