@@ -117,6 +117,12 @@ function onDownloadMeme(elLink) {
     elLink.href = dataUrl
 }
 
+function onDeleteLine() {
+    deleteLine()
+    updateTextInput()
+    renderMeme()
+}
+
 function showSection(sectionName) {
     const sections = document.querySelectorAll('section')
     sections.forEach(section => section.classList.add('hidden'))

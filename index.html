@@ -60,11 +60,50 @@
                             <img 
                             src="icons/decrease font - icon.png" alt="decrease font size" class="control-icon">
                         </button>
-                    </div>
+                        <button onclick="onSwitchLine()"
+                        title="Switch Line">
+                    <img src="icons/up-and-down-opposite-double-arrows-side-by-side.png" alt="Switch Line"
+                    class="control-icon"></button>
+                    <button onclick="onDeleteLine()"
+                    title="Delete line">
+                    <img
+                    src="icons/trash.png"
+                    alt="delete-button"
+                    class="control-icon"
+                  />
+                </button>
+                <button onclick="onAddLine()" title="Add line">
+                    <img
+                      src="icons/add.png"
+                      alt="Add line"
+                      class="control-icon"
+                    />
+                  </button>
+                  <div class="color-picker-container">
+                    <button class="color-btn" title="Change color">
+                      <img
+                        src="icons/paint-board-and-brush.png"
+                        alt="Change color"
+                        class="control-icon"
+                      />
+                    </button>
+                    <input
+                      type="color"
+                      class="color-picker"
+                      onchange="onColorChange(this.value)"
+                    />
+                  </div>
+                  <input
+                    type="color"
+                    class="color-picker hidden"
+                    onchange="onColorChange(this.value)"
+                  />
+                </div>
+                   </button>
+                    </div> 
                     </div>
                     
                 </section>
-
         </main>
 
         <footer>

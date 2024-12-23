@@ -72,6 +72,13 @@ function switchLine() {
     gMeme.selectedLineIdx = (gMeme.selectedLineIdx + 1) % gMeme.lines.length
 }
 
+function deleteLine() {
+    if (gMeme.lines.length <= 1) return 
+    gMeme.lines.splice(gMeme.selectedLineIdx, 1)
+    gMeme.selectedLineIdx = Math.min(gMeme.selectedLineIdx, gMeme.lines.length - 1)
+}
+
+
 function saveMeme() {
     const canvas = document.querySelector('.meme-canvas')
     const memeImage = canvas.toDataURL('image/jpeg')
