@@ -7,7 +7,7 @@
 @import './basis/layout.css';
 
 @import './components/navigation.css';
-@import './components/reset.css';
+@import './components/control.css';
 @import './components/gallery.css';
 @import './components/editor.css';
 @import './components/saved-memes.css';
