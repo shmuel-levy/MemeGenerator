@@ -1,20 +1,36 @@
 .gallery {
     padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
 }
+
+/* .gallery, .meme-editor {
+    background-color: #2a2a2a;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    margin: 20px auto;
+    box-shadow: var(--box-shadow);
+    max-width: var(--container-max-width);
+} */
 
 .search-container {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    background-color: #3a3a3a;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
 }
 
-.search-container input {
-    padding: 10px;
-    border-radius: 6px;
-    border: none;
+.search-input {
     width: 100%;
-    max-width: 500px;
+    padding: 0.8rem;
+    border-radius: var(--border-radius);
+    border: none;
+    background-color: #454545;
+    color: white;
+}
+
+.search-input::placeholder {
+    color: #999;
 }
 
 .keywords {
@@ -23,11 +39,11 @@
     flex-wrap: wrap;
 }
 
+
 .image-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px 0;
+    background-color: #3a3a3a;
+    padding: 20px;
+    border-radius: var(--border-radius);
 }
 
 .image-container img {

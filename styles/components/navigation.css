@@ -24,3 +24,22 @@
 .nav-right button:hover {
     text-decoration: underline;
 }
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+.nav-links button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
+
+.nav-links button:hover {
+    color: var(--primary-color);
+}
