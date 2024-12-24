@@ -1,13 +1,86 @@
 @media (max-width: 768px) {
-    .editor-container {
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .editor-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .canvas-container {
+        padding: 10px;
+    }
+
+    .meme-canvas {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .editor-controls {
+        padding: 15px;
+    }
+
+    .text-formatting-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .font-controls {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .bottom-action-buttons {
         flex-direction: column;
     }
 
-    .control-box {
-        width: 100%;
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
 
-    .image-container {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    .search-container {
+        padding: 10px;
+    }
+
+    .filter-tags {
+        justify-content: center;
+    }
+}
+
+/* Add to editor.css */
+@media (max-width: 768px) {
+    .control-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .text-input {
+        padding: 8px;
+    }
+
+    .text-action-buttons button {
+        padding: 6px;
+    }
+}
+
+/* Add touch-specific styles */
+@media (hover: none) {
+    .canvas-container {
+        touch-action: none;
+    }
+
+    .text-formatting-grid button,
+    .text-action-buttons button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    .search-input,
+    .text-input,
+    select {
+        font-size: 16px;
     }
 }
