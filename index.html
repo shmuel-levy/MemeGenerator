@@ -97,19 +97,34 @@
                     class="color-picker hidden"
                     onchange="onColorChange(this.value)"
                   />
+                  <div class="bottom-action-buttons">
+                    <button class="save-btn" onclick="onSaveMeme()">
+                      <i class="fas fa-save"></i> Save
+                    </button>
+                    <button class="share-btn" onclick="onShareMeme()">
+                      <i class="fas fa-share-alt"></i> Share
+                    </button>
+                    <a href="#" class="download-btn" onclick="onDownloadMeme(this)" download="my-meme.jpg"> 
+                      <i class="fas fa-download"></i> Download
+                    </a>
+                  </div>
                 </div>
-                   </button>
-                    </div> 
-                    </div>
-                    
-                </section>
-        </main>
-
-        <footer>
+              </div>
+            </section>
+    
+            <section class="saved-memes hidden">
+              <h2>Saved Memes</h2>
+              <div class="saved-memes-container grid-container"></div>
+              <div class="no-memes-message" style="display: none">
+                <p>No saved memes yet. Create some memes first!</p>
+              </div>
+            </section>
+          </main>
+    
+          <footer>
             <p>&copy; 2024 Meme Generator. All rights reserved.</p>
-        </footer>
-    </div>
-
+          </footer>
+        </div>
     <script src="./JS/services/storage-service.js"></script>
     <script src="./JS/services/util-service.js"></script>
     <script src="./JS/services/meme-service.js"></script>

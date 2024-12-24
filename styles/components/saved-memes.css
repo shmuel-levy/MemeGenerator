@@ -5,3 +5,36 @@
     padding: 20px;
 }
 
+.saved-meme {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+        overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.saved-meme:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.saved-meme img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.saved-memes {
+    padding: 20px;
+}
+
+.saved-memes h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.image-container img:hover,
+.saved-meme:hover {
+    background: var(--hover-flex-bg-clr);
+}
