@@ -72,6 +72,14 @@ function switchLine() {
     gMeme.selectedLineIdx = (gMeme.selectedLineIdx + 1) % gMeme.lines.length
 }
 
+function setLineAlign(align) {
+    gMeme.lines[gMeme.selectedLineIdx].align = align
+}
+
+function moveLinePosition(diff) {
+    gMeme.lines[gMeme.selectedLineIdx].pos.y += diff
+}
+
 function deleteLine() {
     if (gMeme.lines.length <= 1) return 
     gMeme.lines.splice(gMeme.selectedLineIdx, 1)

@@ -41,43 +41,71 @@
             </section>
 
             <section class="meme-editor hidden">
-                <div class="editor-grid">
-                    <div class="canvas-container">
-                        <canvas class="meme-canvas" width="450" height="450"></canvas>
-                    </div>
-                        <input type="text"
-                        class="text-input"
-                        placeholder="Add Text"
-                        oninput="onTextInput(this.value)">
-
-                    <div class=" control-panel">
-                        <button onclick="onChangeFontSize(1)" title="Increase-font">
-                            <img 
-                            src="icons/increase font - icon.png" alt="Increase font size" class="control-icon">
-                        </button>
-                        <button onclick="onChangeFontSize(-1)" title="Decrease-font">
-                            <img 
-                            src="icons/decrease font - icon.png" alt="decrease font size" class="control-icon">
-                        </button>
-                        <button onclick="onSwitchLine()"
-                        title="Switch Line">
-                    <img src="icons/up-and-down-opposite-double-arrows-side-by-side.png" alt="Switch Line"
-                    class="control-icon"></button>
-                    <button onclick="onDeleteLine()"
-                    title="Delete line">
-                    <img
-                    src="icons/trash.png"
-                    alt="delete-button"
-                    class="control-icon"
+              <div class="editor-grid">
+                <div class="canvas-container">
+                  <canvas class="meme-canvas" width="450" height="450"></canvas>
+                </div>
+                <div class="editor-controls">
+                  <input
+                    type="text"
+                    class="text-input"
+                    placeholder="Add Text Here"
+                    oninput="onTextInput(this.value)"
                   />
-                </button>
-                <button onclick="onAddLine()" title="Add line">
-                    <img
-                      src="icons/add.png"
-                      alt="Add line"
-                      class="control-icon"
-                    />
-                  </button>
+    
+                  <div class="text-action-buttons">
+                    <button onclick="onSwitchLine()" title="Switch line">
+                      <img
+                        src="icons/up-and-down-opposite-double-arrows-side-by-side.png"
+                        alt="Switch line"
+                        class="control-icon"
+                      />
+                    </button>
+                    <button onclick="onAddLine()" title="Add line">
+                      <img
+                        src="icons/add.png"
+                        alt="Add line"
+                        class="control-icon"
+                      />
+                    </button>
+                    <button class="delete-btn" onclick="onDeleteLine()" title="Delete line">
+                      <img
+                        src="icons/trash.png"
+                        alt="Delete line"
+                        class="control-icon"
+                      />
+                    </button>
+                  </div>
+    
+                  <div class="text-formatting-box">
+                    <div class="text-formatting-grid">
+                      <button onclick="onChangeFontSize(1)" title="Increase font">
+                        <img
+                          src="icons/increase font - icon.png"
+                          alt="Increase font size"
+                          class="control-icon"
+                        />
+                      </button>
+                      <button onclick="onChangeFontSize(-1)" title="Decrease font">
+                        <img
+                          src="icons/decrease font - icon.png"
+                          alt="Decrease font size"
+                          class="control-icon"
+                        />
+                      </button>
+                      <button onclick="onAlignText('left')" title="Align left">
+                       <img src="icons/align-to-left.png" alt="Align left"
+                       class="control-icon">
+                      </button>
+                      <button onclick="onAlignText('center')" title="Align center">
+                        <img src="icons/center-text-alignment.png" alt="Align center"
+                       class="control-icon">
+                      </button>
+                      <button onclick="onAlignText('right')" title="Align right">
+                        <img src="icons/align-to-right.png" alt="Align right"
+                       class="control-icon">
+                      </button>
+                    </div>
                   <div class="color-picker-container">
                     <button class="color-btn" title="Change color">
                       <img
