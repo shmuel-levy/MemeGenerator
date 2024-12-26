@@ -162,6 +162,11 @@ function onAddLine() {
     renderMeme()
 }
 
+function onAlignText(align) {
+    setLineAlign(align)
+    renderMeme()
+}
+
 function onSwitchLine() {
     switchLine()
     renderMeme()
