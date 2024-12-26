@@ -69,28 +69,28 @@ function setFontSize(diff) {
 }
 
 function setTextDrag(isDrag) {
-    gMeme.lines[gMeme.selectedLineIdx].isDrag = isDrag;
+    gMeme.lines[gMeme.selectedLineIdx].isDrag = isDrag
 }
 
 function moveText(dx, dy) {
-    const line = gMeme.lines[gMeme.selectedLineIdx];
-    line.pos.x += dx;
-    line.pos.y += dy;
+    const line = gMeme.lines[gMeme.selectedLineIdx]
+    line.pos.x += dx
+    line.pos.y += dy
 }
 
 function isTextClicked(clickedPos) {
     return gMeme.lines.findIndex(line => {
-        const textMetrics = gCtx.measureText(line.txt);
-        const textHeight = line.size;
-        const textWidth = textMetrics.width;
+        const textMetrics = gCtx.measureText(line.txt)
+        const textHeight = line.size
+        const textWidth = textMetrics.width
         
         return (
             clickedPos.x >= line.pos.x - textWidth/2 &&
             clickedPos.x <= line.pos.x + textWidth/2 &&
             clickedPos.y >= line.pos.y - textHeight/2 &&
             clickedPos.y <= line.pos.y + textHeight/2
-        );
-    });
+        )
+    })
 }
 
 function switchLine() {
