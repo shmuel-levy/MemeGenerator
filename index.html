@@ -39,17 +39,29 @@
             <div class="filter-tags">
               <span class="tag" onclick="onKeywordClick('funny')">Funny</span>
               <span class="tag" onclick="onKeywordClick('cute')">Cute</span>
-              <span class="tag" onclick="onKeywordClick('animals')">Animals</span>
+              <span class="tag" onclick="onKeywordClick('animals')"
+                >Animals</span
+              >
             </div>
           </div>
           <div class="image-container grid-container"></div>
           <div class="upload-container">
-            <input type="file" class="file-input" name="image" onchange="onImgInput(event)" />
-            <form action="" method="POST" enctype="multipart/form-data" onsubmit="onUploadImg(event)">
-                <input name="img" id="imgData" type="hidden" />
-                <!-- <button class="btn">Upload to Gallery</button> -->
+            <input
+              type="file"
+              class="file-input"
+              name="image"
+              onchange="onImgInput(event)"
+            />
+            <form
+              action=""
+              method="POST"
+              enctype="multipart/form-data"
+              onsubmit="onUploadImg(event)"
+            >
+              <input name="img" id="imgData" type="hidden" />
+              <!-- <button class="btn">Upload to Gallery</button> -->
             </form>
-        </div>
+          </div>
         </section>
 
         <section class="meme-editor hidden">
@@ -80,7 +92,11 @@
                     class="control-icon"
                   />
                 </button>
-                <button class="delete-btn" onclick="onDeleteLine()" title="Delete line">
+                <button
+                  class="delete-btn"
+                  onclick="onDeleteLine()"
+                  title="Delete line"
+                >
                   <img
                     src="icons/trash.png"
                     alt="Delete line"
@@ -106,21 +122,33 @@
                     />
                   </button>
                   <button onclick="onAlignText('left')" title="Align left">
-                   <img src="icons/align-to-left.png" alt="Align left"
-                   class="control-icon">
+                    <img
+                      src="icons/align-to-left.png"
+                      alt="Align left"
+                      class="control-icon"
+                    />
                   </button>
                   <button onclick="onAlignText('center')" title="Align center">
-                    <img src="icons/center-text-alignment.png" alt="Align center"
-                   class="control-icon">
+                    <img
+                      src="icons/center-text-alignment.png"
+                      alt="Align center"
+                      class="control-icon"
+                    />
                   </button>
                   <button onclick="onAlignText('right')" title="Align right">
-                    <img src="icons/align-to-right.png" alt="Align right"
-                   class="control-icon">
+                    <img
+                      src="icons/align-to-right.png"
+                      alt="Align right"
+                      class="control-icon"
+                    />
                   </button>
                 </div>
 
                 <div class="font-controls">
-                  <select class="font-select" onchange="onFontChange(this.value)">
+                  <select
+                    class="font-select"
+                    onchange="onFontChange(this.value)"
+                  >
                     <option value="Impact">IMPACT</option>
                     <option value="Arial">Arial</option>
                     <option value="Times New Roman">Times New Roman</option>
@@ -163,7 +191,12 @@
                 <button class="share-btn" onclick="onShareMeme()">
                   <i class="fas fa-share-alt"></i> Share
                 </button>
-                <a href="#" class="download-btn" onclick="onDownloadMeme(this)" download="my-meme.jpg"> 
+                <a
+                  href="#"
+                  class="download-btn"
+                  onclick="onDownloadMeme(this)"
+                  download="my-meme.jpg"
+                >
                   <i class="fas fa-download"></i> Download
                 </a>
               </div>
@@ -185,12 +218,11 @@
       </footer>
     </div>
 
-    <script src="js/services/storage-service.js"></script>
-    <script src="js/services/util-service.js"></script>
-    <script src="js/services/meme-service.js"></script>
-    <script src="js/services/upload-service.js"></script>
-
-    <script src="js/controllers/gallery-controller.js"></script>
-    <script src="js/controllers/meme-controller.js"></script>
+    <script src="./JS/services/storage-service.js"></script>
+    <script src="./JS/services/util-service.js"></script>
+    <script src="./JS/services/meme-service.js"></script>
+    <script src="./JS/services/upload-service.js"></script>
+    <script src="./JS/controllers/gallery-controller.js"></script>
+    <script src="./JS/controllers/meme-controller.js"></script>
   </body>
 </html>
