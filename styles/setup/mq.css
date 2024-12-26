@@ -50,6 +50,7 @@
     }
 }
 
+/* Add to editor.css */
 @media (max-width: 768px) {
     .control-icon {
         width: 24px;
@@ -65,6 +66,7 @@
     }
 }
 
+/* Add touch-specific styles */
 @media (hover: none) {
     .canvas-container {
         touch-action: none;

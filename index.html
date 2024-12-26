@@ -1,85 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meme Generator</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-</head>
-<body onload="onInit()">
+    <link rel="stylesheet" href="styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body onload="onInit()">
     <div class="main-container">
-        <header>
-            <nav class="main-nav">
-                <div class="logo">Meme Generator</div>
-                <ul class="nav-links">
-                    <li><button onclick="showSection('gallery')">Gallery</button></li>
-                    <li><button onclick="showSection('meme-editor')">Editor</button></li>
-                    <li><button onclick="showSection('saved-memes')">Saved</button></li>
-                </ul>
-            </nav>
-        </header>
+      <header>
+        <nav class="main-nav">
+          <div class="logo">Meme Generator</div>
+          <ul class="nav-links">
+            <li><button onclick="showSection('gallery')">Gallery</button></li>
+            <li>
+              <button onclick="showSection('meme-editor')">Editor</button>
+            </li>
+            <li><button onclick="showSection('saved-memes')">Saved</button></li>
+          </ul>
+        </nav>
+      </header>
 
-        <main>
-            <section class="gallery">
-                <div class="search-container">
-    <input type="text" 
-           class="search-input" 
-           placeholder="Search memes by keywords..."
-           list="search-keywords">
-    <datalist id="search-keywords"></datalist>
-    
-    <div class="filter-tags">
-        <span class="tag" onclick="onKeywordClick('funny')">Funny</span>
-        <span class="tag" onclick="onKeywordClick('cute')">Cute</span>
-        <span class="tag" onclick="onKeywordClick('animals')">Animals</span>
-    </div>
-</div>
-                <div class="image-container grid-container">
-                </div>
-            </section>
+      <main>
+        <section class="gallery">
+          <div class="search-container">
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Search memes by keywords..."
+              list="search-keywords"
+            />
+            <datalist id="search-keywords"></datalist>
 
-            <section class="meme-editor hidden">
-                <div class="editor-grid">
-                    <div class="canvas-container">
-                        <canvas class="meme-canvas" width="450" height="450"></canvas>
-                    </div>
-                        <input type="text"
-                        class="text-input"
-                        placeholder="Add Text"
-                        oninput="onTextInput(this.value)">
+            <div class="filter-tags">
+              <span class="tag" onclick="onKeywordClick('funny')">Funny</span>
+              <span class="tag" onclick="onKeywordClick('cute')">Cute</span>
+              <span class="tag" onclick="onKeywordClick('animals')">Animals</span>
+            </div>
+          </div>
+          <div class="image-container grid-container"></div>
+          <div class="upload-container">
+            <input type="file" class="file-input" name="image" onchange="onImgInput(event)" />
+            <form action="" method="POST" enctype="multipart/form-data" onsubmit="onUploadImg(event)">
+                <input name="img" id="imgData" type="hidden" />
+                <!-- <button class="btn">Upload to Gallery</button> -->
+            </form>
+        </div>
+        </section>
 
-                    <div class=" control-panel">
-                        <button onclick="onChangeFontSize(1)" title="Increase-font">
-                            <img 
-                            src="icons/increase font - icon.png" alt="Increase font size" class="control-icon">
-                        </button>
-                        <button onclick="onChangeFontSize(-1)" title="Decrease-font">
-                            <img 
-                            src="icons/decrease font - icon.png" alt="decrease font size" class="control-icon">
-                        </button>
-                        <button onclick="onSwitchLine()"
-                        title="Switch Line">
-                    <img src="icons/up-and-down-opposite-double-arrows-side-by-side.png" alt="Switch Line"
-                    class="control-icon"></button>
-                    <button onclick="onDeleteLine()"
-                    title="Delete line">
-                    <img
-                    src="icons/trash.png"
-                    alt="delete-button"
+        <section class="meme-editor hidden">
+          <div class="editor-grid">
+            <div class="canvas-container">
+              <canvas class="meme-canvas" width="450" height="450"></canvas>
+            </div>
+            <div class="editor-controls">
+              <input
+                type="text"
+                class="text-input"
+                placeholder="Add Text Here"
+                oninput="onTextInput(this.value)"
+              />
+
+              <div class="text-action-buttons">
+                <button onclick="onSwitchLine()" title="Switch line">
+                  <img
+                    src="icons/up-and-down-opposite-double-arrows-side-by-side.png"
+                    alt="Switch line"
                     class="control-icon"
                   />
                 </button>
                 <button onclick="onAddLine()" title="Add line">
+                  <img
+                    src="icons/add.png"
+                    alt="Add line"
+                    class="control-icon"
+                  />
+                </button>
+                <button class="delete-btn" onclick="onDeleteLine()" title="Delete line">
+                  <img
+                    src="icons/trash.png"
+                    alt="Delete line"
+                    class="control-icon"
+                  />
+                </button>
+              </div>
+
+              <div class="text-formatting-box">
+                <div class="text-formatting-grid">
+                  <button onclick="onChangeFontSize(1)" title="Increase font">
                     <img
-                      src="icons/add.png"
-                      alt="Add line"
+                      src="icons/increase font - icon.png"
+                      alt="Increase font size"
                       class="control-icon"
                     />
                   </button>
+                  <button onclick="onChangeFontSize(-1)" title="Decrease font">
+                    <img
+                      src="icons/decrease font - icon.png"
+                      alt="Decrease font size"
+                      class="control-icon"
+                    />
+                  </button>
+                  <button onclick="onAlignText('left')" title="Align left">
+                   <img src="icons/align-to-left.png" alt="Align left"
+                   class="control-icon">
+                  </button>
+                  <button onclick="onAlignText('center')" title="Align center">
+                    <img src="icons/center-text-alignment.png" alt="Align center"
+                   class="control-icon">
+                  </button>
+                  <button onclick="onAlignText('right')" title="Align right">
+                    <img src="icons/align-to-right.png" alt="Align right"
+                   class="control-icon">
+                  </button>
+                </div>
+
+                <div class="font-controls">
+                  <select class="font-select" onchange="onFontChange(this.value)">
+                    <option value="Impact">IMPACT</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                  </select>
                   <div class="color-picker-container">
-                    <button class="color-btn" title="Change color">
+                    <button class="color-btn" title="Text color">
                       <img
                         src="icons/paint-board-and-brush.png"
                         alt="Change color"
@@ -92,44 +139,58 @@
                       onchange="onColorChange(this.value)"
                     />
                   </div>
-                  <input
-                    type="color"
-                    class="color-picker hidden"
-                    onchange="onColorChange(this.value)"
-                  />
-                  <div class="bottom-action-buttons">
-                    <button class="save-btn" onclick="onSaveMeme()">
-                      <i class="fas fa-save"></i> Save
+                  <div class="color-picker-container">
+                    <button class="color-btn" title="Stroke color">
+                      <img
+                        src="icons/painter.png"
+                        alt="Change stroke color"
+                        class="control-icon"
+                      />
                     </button>
-                    <button class="share-btn" onclick="onShareMeme()">
-                      <i class="fas fa-share-alt"></i> Share
-                    </button>
-                    <a href="#" class="download-btn" onclick="onDownloadMeme(this)" download="my-meme.jpg"> 
-                      <i class="fas fa-download"></i> Download
-                    </a>
+                    <input
+                      type="color"
+                      class="color-picker"
+                      onchange="onStrokeChange(this.value)"
+                    />
                   </div>
                 </div>
               </div>
-            </section>
-    
-            <section class="saved-memes hidden">
-              <h2>Saved Memes</h2>
-              <div class="saved-memes-container grid-container"></div>
-              <div class="no-memes-message" style="display: none">
-                <p>No saved memes yet. Create some memes first!</p>
-              </div>
-            </section>
-          </main>
-    
-          <footer>
-            <p>&copy; 2024 Meme Generator. All rights reserved.</p>
-          </footer>
-        </div>
-    <script src="./JS/services/storage-service.js"></script>
-    <script src="./JS/services/util-service.js"></script>
-    <script src="./JS/services/meme-service.js"></script>
-    <script src="./JS/controllers/gallery-controller.js"></script>
-    <script src="./JS/controllers/meme-controller.js"></script>
 
-</body>
+              <div class="bottom-action-buttons">
+                <button class="save-btn" onclick="onSaveMeme()">
+                  <i class="fas fa-save"></i> Save
+                </button>
+                <button class="share-btn" onclick="onShareMeme()">
+                  <i class="fas fa-share-alt"></i> Share
+                </button>
+                <a href="#" class="download-btn" onclick="onDownloadMeme(this)" download="my-meme.jpg"> 
+                  <i class="fas fa-download"></i> Download
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="saved-memes hidden">
+          <h2>Saved Memes</h2>
+          <div class="saved-memes-container grid-container"></div>
+          <div class="no-memes-message" style="display: none">
+            <p>No saved memes yet. Create some memes first!</p>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>&copy; 2024 Meme Generator. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script src="js/services/storage-service.js"></script>
+    <script src="js/services/util-service.js"></script>
+    <script src="js/services/meme-service.js"></script>
+    <script src="js/services/upload-service.js"></script>
+
+    <script src="js/controllers/gallery-controller.js"></script>
+    <script src="js/controllers/meme-controller.js"></script>
+  </body>
 </html>
