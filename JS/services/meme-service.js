@@ -143,6 +143,10 @@ function getSavedMemes() {
     return loadFromStorage(SAVED_MEMES_KEY) || []
 }
 
+function toggleMenu() {
+    document.body.classList.toggle('menu-open');
+}
+
 function updateSavedMemesView() {
     const savedMemes = getSavedMemes()
     const noMemesMessage = document.querySelector('.no-memes-message')

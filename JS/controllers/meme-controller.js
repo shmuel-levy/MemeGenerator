@@ -272,6 +272,7 @@ function showSection(sectionName) {
 
 function resizeCanvas() {
     const elContainer = document.querySelector('.canvas-container')
-    gElCanvas.width = elContainer.offsetWidth
-    gElCanvas.height = elContainer.offsetWidth
+    const containerWidth = elContainer.offsetWidth
+    gElCanvas.width = containerWidth
+    gElCanvas.height = containerWidth
 }
