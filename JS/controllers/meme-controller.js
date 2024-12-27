@@ -162,6 +162,11 @@ function onAddLine() {
     renderMeme()
 }
 
+function onAddSticker(emoji) {
+    addSticker(emoji)
+    renderMeme()
+}
+
 function onAlignText(align) {
     setLineAlign(align)
     renderMeme()

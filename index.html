@@ -43,7 +43,11 @@
               list="search-keywords"
             />
             <datalist id="search-keywords"></datalist>
-
+            <div class="random-meme">
+              <button class="random-btn" onclick="onRandomMeme()">
+                  <i class="fas fa-random"></i> I'm Flexible
+              </button>
+          </div>
             <div class="filter-tags">
               <span class="tag" onclick="onKeywordClick('funny')">Funny</span>
               <span class="tag" onclick="onKeywordClick('cute')">Cute</span>
@@ -84,7 +88,15 @@
                 placeholder="Add Text Here"
                 oninput="onTextInput(this.value)"
               />
-
+              <div class="stickers-panel">
+                <div class="stickers-container">
+                    <span class="sticker" draggable="true" onclick="onAddSticker(this.textContent)">😜</span>
+                    <span class="sticker" draggable="true" onclick="onAddSticker(this.textContent)">😍</span>
+                    <span class="sticker" draggable="true" onclick="onAddSticker(this.textContent)">😎</span>
+                    <span class="sticker" draggable="true" onclick="onAddSticker(this.textContent)">🤔</span>
+                    <span class="sticker" draggable="true" onclick="onAddSticker(this.textContent)">🎉</span>
+                </div>
+            </div>
               <div class="text-action-buttons">
                 <button onclick="onSwitchLine()" title="Switch line">
                   <img

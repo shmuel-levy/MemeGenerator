@@ -148,3 +148,27 @@
     height: 20px;
 }
 
+.stickers-panel {
+    background-color: var(--editor-centermodal-clr);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.stickers-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.sticker {
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.sticker:hover {
+    transform: scale(1.2);
+}
