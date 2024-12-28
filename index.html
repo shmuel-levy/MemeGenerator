@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <title>Meme Generator</title>
     <link rel="stylesheet" href="styles/style.css" />
     <link
@@ -60,19 +60,13 @@
           <div class="upload-container">
             <input
               type="file"
-              class="file-input"
+              class="file-input hidden"
               name="image"
               onchange="onImgInput(event)"
             />
-            <form
-              action=""
-              method="POST"
-              enctype="multipart/form-data"
-              onsubmit="onUploadImg(event)"
-            >
-              <input name="img" id="imgData" type="hidden" />
-              <!-- <button class="btn">Upload to Gallery</button> -->
-            </form>
+            <button class="upload-btn" onclick="onUploadClick()">
+              <i class="fas fa-upload"></i> Upload to Gallery
+            </button>
           </div>
         </section>
 

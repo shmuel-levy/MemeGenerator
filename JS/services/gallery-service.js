@@ -42,20 +42,9 @@ function addImageToGallery(img) {
     renderGallery()
 }
 
-function onUploadImg(ev) {
-    ev.preventDefault()
-    const imgData = document.querySelector('.gallery-img')?.src
-    if (!imgData) return
-
-    uploadImg(imgData, (uploadedImgUrl) => {
-        const newImage = {
-            id: gImgs.length + 1,
-            url: uploadedImgUrl,
-            keywords: ['uploaded']
-        }
-        gImgs.unshift(newImage)
-        renderGallery()
-    })
+function onUploadClick() {
+    const fileInput = document.querySelector('.file-input') 
+    fileInput.click() 
 }
 
 function onRandomMeme() {

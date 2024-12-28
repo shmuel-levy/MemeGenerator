@@ -279,7 +279,7 @@ function resizeCanvas() {
     const elContainer = document.querySelector('.canvas-container')
     const containerWidth = elContainer.offsetWidth
 
-    const aspectRatio = gElCanvas.width / gElCanvas.height
+    const aspectRatio = 1 
     gElCanvas.width = containerWidth
     gElCanvas.height = containerWidth / aspectRatio
 
