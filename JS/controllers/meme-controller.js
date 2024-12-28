@@ -284,4 +284,5 @@ function resizeCanvas() {
     gElCanvas.height = containerWidth / aspectRatio
 
     renderMeme()
+    // console.log('hey:');
 }
