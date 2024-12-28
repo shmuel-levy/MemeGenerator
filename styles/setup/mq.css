@@ -1,179 +1,73 @@
-@media (max-width: 768px) {
-    .nav-links {
-        width: 100%;
-        justify-content: center;
-        margin-top: 10px;
-    }
 
+@media (max-width: 400px) {
     .editor-grid {
         grid-template-columns: 1fr;
-        padding: 1rem;
         gap: 1rem;
-    }
-
-    .canvas-container {
-        padding: 10px;
-    }
-
-    .meme-canvas {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .editor-controls {
-        padding: 15px;
+        padding: 1rem;
     }
 
     .text-formatting-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .font-controls {
-        grid-template-columns: 1fr;
-        gap: 8px;
+    .nav-links button {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .editor-grid {
+        grid-template-columns: 1fr; /* Make it single column for mobile */
+        gap: 1rem;
+    }
+
+    .canvas-container {
+        width: 100%; /* Full width */
+        height: auto;
+    }
+
+    .editor-controls {
+        width: 100%;
     }
 
     .bottom-action-buttons {
         flex-direction: column;
     }
 
-    .grid-container {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    .bottom-action-buttons button,
+    .bottom-action-buttons a {
+        width: 100%;
     }
 
     .search-container {
-        padding: 10px;
-    }
-
-    .filter-tags {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .control-icon {
-        width: 24px;
-        height: 24px;
-    }
-
-    .text-input {
-        padding: 8px;
-    }
-
-    .text-action-buttons button {
-        padding: 6px;
-    }
-}
-
-@media (hover: none) {
-    .canvas-container {
-        touch-action: none;
-    }
-
-    .text-formatting-grid button,
-    .text-action-buttons button {
-        min-height: 44px;
-        min-width: 44px;
-    }
-
-    .search-input,
-    .text-input,
-    select {
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 740px) {
-    .image-container img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
+        flex-direction: column;
     }
 
     .nav-links {
-        display: none;
-    }
-
-    .main-header-mobile {
-        position: fixed;
-        top: 0;
-        right: 0;
-        height: 46%;
-        background-color: rgba(57, 57, 52, 0.9);
-        width: 100%;
-        max-width: 200px;
-        transform: translateX(100%);
-        border-radius: 0 0 10px 10px;
-        transition: transform 0.8s;
-    }
-
-    body.menu-open .main-header-mobile {
-        transform: translateX(0);
-        box-shadow: -8px 0px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    .header-mobile-text {
-        display: flex;
         flex-direction: column;
-        align-items: center;
-        margin-top: 86px;
-        gap: 20px;
-        font-size: 1.3em;
+        gap: 1rem;
     }
 
+    .nav-links button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1024px) {
     .editor-grid {
         grid-template-columns: 1fr;
-        gap: 1rem;
+    }
+
+    .editor-controls {
+        max-width: 100%;
     }
 
     .text-formatting-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(5, 1fr);
     }
 
-    .search-container {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .btn-toggle-menu {
-        display: block;
-        background: none;
-        border: none;
-        cursor: pointer;
-    }
-
-    .hamburger-lines {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-    }
-
-    .line {
-        width: 25px;
-        height: 3px;
-        background-color: var(--btn-clr);
-        transition: 0.3s;
-    }
-
-    .menu-open .line1 {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .menu-open .line2 {
-        opacity: 0;
-    }
-
-    .menu-open .line3 {
-        transform: rotate(-45deg) translate(7px, -7px);
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
 }
 
-@media (min-width: 741px) {
-    .btn-toggle-menu {
-        display: none;
-    }
-
-    .main-header-mobile {
-        display: none;
-    }
-}
