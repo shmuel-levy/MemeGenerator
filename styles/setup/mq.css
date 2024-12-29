@@ -22,3 +22,89 @@
         gap: 0.5rem;
     }
 }
+@media (max-width: 920px) {
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        background-color: var(--editor-modal-bg-clr);
+        min-width: 200px;
+        transition: transform .6s;
+        z-index: 1000;
+    }
+
+    body:not(.menu-open) .main-nav {
+        transform: translateX(100%);
+    }
+
+    .nav-links {
+        flex-direction: column;
+        margin-top: 60px;
+    }
+
+    .nav-links li {
+        border-bottom: 1px solid var(--btn-clr);
+        width: 100%;
+    }
+
+    .nav-links button {
+        width: 100%;
+        padding: 1rem;
+        text-align: left;
+    }
+
+    .nav-links button:hover {
+        background-color: var(--editor-centermodal-clr);
+    }
+
+    /* Hamburger button */
+    .btn-menu {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--btn-clr);
+        font-size: 1.5rem;
+        cursor: pointer;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 2000;
+    }
+
+    /* Screen overlay */
+    .main-screen {
+        position: fixed;
+        inset: 0;
+        background-color: rgb(0 0 0 / 50%);
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .6s;
+        z-index: 900;
+    }
+
+    body.menu-open .main-screen {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* Logo positioning */
+    .logo {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 2000;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 921px) {
+    .btn-menu {
+        display: none;
+    }
+
+    .main-screen {
+        display: none;
+    }
+}
