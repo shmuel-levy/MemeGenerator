@@ -10,3 +10,7 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+.touch-action-manipulation {
+    touch-action: manipulation;
+  }

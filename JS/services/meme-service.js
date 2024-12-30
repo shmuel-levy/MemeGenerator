@@ -212,6 +212,14 @@ function updateSavedMemesView() {
     }
 }
 
+function preventZoomOnMobile() {
+    const buttons = document.querySelectorAll('.control-icon, .text-action-buttons button, .bottom-action-buttons button, .nav-links button, .tag, .color-btn, .sticker')
+    
+    buttons.forEach(button => {
+        button.classList.add('touch-action-manipulation')
+    })
+}
+
 function getRandomImgId() {
     const imgs = getImgs()
     const randomIdx = getRandomInt(0, imgs.length - 1)

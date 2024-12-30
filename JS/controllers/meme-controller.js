@@ -9,6 +9,7 @@ function onInit() {
     gElCanvas = document.querySelector('.meme-canvas')
     gCtx = gElCanvas.getContext('2d')
     
+    preventZoomOnMobile()
     initSearch()  
     renderGallery()
     addListeners()
@@ -284,5 +285,5 @@ function resizeCanvas() {
     gElCanvas.height = containerWidth / aspectRatio
 
     renderMeme()
-    // console.log('hey:');
+    // console.log('hey:')
 }
